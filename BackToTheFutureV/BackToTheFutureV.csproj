@@ -1,212 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7BE2F39B-E0F1-4F7D-B674-BC595E4AF50D}</ProjectGuid>
+    <TargetFramework>netframework48</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BackToTheFutureV</RootNamespace>
-    <AssemblyName>BackToTheFutureV</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugSymbols>true</DebugSymbols>
-    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Optimize>true</Optimize>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="irrKlang.NET4, Version=1.0.6617.18847, Culture=neutral, PublicKeyToken=a854741bd80517c7, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(GTAPath)\scripts\irrKlang.NET4.dll</HintPath>
+    <Reference Include="FusionLibrary">
+      <HintPath>F:\EpicLibrary\GTAV\Scripts\FusionLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="KlangRageAudioLibrary, Version=1.0.7917.28287, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(GTAPath)\scripts\KlangRageAudioLibrary.dll</HintPath>
+    <Reference Include="irrKlang.NET4">
+      <HintPath>F:\EpicLibrary\GTAV\Scripts\irrKlang.NET4.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="GUI\RCGUIScaleform.cs" />
-    <Compile Include="GUI\SIDScaleform.cs" />
-    <Compile Include="Menu\BTTFVMenu.cs" />
-    <Compile Include="Menu\DoorsMenu.cs" />
-    <Compile Include="Menu\CustomMenu2.cs" />
-    <Compile Include="Menu\GarageMenu.cs" />
-    <Compile Include="Menu\OverrideMenu.cs" />
-    <Compile Include="Players\EmitterSparkPlayer.cs" />
-    <Compile Include="Story\Missions\LightningRun.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\DecoratorsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\TCD3DRowHandler.cs" />
-    <Compile Include="TimeMachineClasses\Clone\TimeMachineCloneHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\ClockHandler.cs" />
-    <Compile Include="TimeMachineClasses\Story\StoryTimeMachineHandler.cs" />
-    <Compile Include="Utility\GarageHandler.cs" />
-    <Compile Include="Utility\HUDProperties.cs" />
-    <Compile Include="Utility\InternalEnums.cs" />
-    <Compile Include="Utility\InternalInventory.cs" />
-    <Compile Include="Utility\Memory\CVehicle.cs" />
-    <Compile Include="Utility\Memory\CWheel.cs" />
-    <Compile Include="Utility\Memory\INativeMemory.cs" />
-    <Compile Include="Utility\Memory\ModuleInfo.cs" />
-    <Compile Include="Utility\Memory\NativeMemory.cs" />
-    <Compile Include="Utility\Memory\Pattern.cs" />
-    <Compile Include="Utility\Memory\Pointer.cs" />
-    <Compile Include="Utility\Memory\PointerExtensions.cs" />
-    <Compile Include="Utility\Memory\Win32Native.cs" />
-    <Compile Include="Utility\PersistenceScript.cs" />
-    <Compile Include="Settings\RCGUIEditer.cs" />
-    <Compile Include="Story\Missions\EscapeMission.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\ConstantsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\SIDHandler.cs" />
-    <Compile Include="GUI\TCD3DRowScaleform.cs" />
-    <Compile Include="GUI\TCD2DScaleform.cs" />
-    <Compile Include="Menu\CustomMenu.cs" />
-    <Compile Include="Menu\ControlsMenu.cs" />
-    <Compile Include="Menu\OutatimeMenu.cs" />
-    <Compile Include="Menu\PresetsMenu.cs" />
-    <Compile Include="Menu\TCDMenu.cs" />
-    <Compile Include="Menu\MainMenu.cs" />
-    <Compile Include="Menu\MenuHandler.cs" />
-    <Compile Include="Menu\PhotoMenu.cs" />
-    <Compile Include="Menu\EventsSettingsMenu.cs" />
-    <Compile Include="Menu\RCMenu.cs" />
-    <Compile Include="Menu\SoundsSettingsMenu.cs" />
-    <Compile Include="Menu\SettingsMenu.cs" />
-    <Compile Include="Menu\TimeMachineMenu.cs" />
-    <Compile Include="Players\FireTrail.cs" />
-    <Compile Include="Players\FireTrailsHandler.cs" />
-    <Compile Include="Players\SparkPlayer.cs" />
-    <Compile Include="Settings\ModControls.cs" />
-    <Compile Include="Story\Mission.cs" />
-    <Compile Include="Story\MissionHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\PropertiesHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\EventsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\PlayersHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\ParticlesHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\ScaleformsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\DriverAIHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\EngineHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\FluxCapacitorHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\FlyingHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\FreezeHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\FuelHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\HandlerPrimitive.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\ComponentsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\InputHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\LightningStrikeHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\RailroadHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\RCHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\ReentryHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\SparksHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\SpeedoHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\StarterHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\TCDHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\TFCHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\TimeTravelHandler.cs" />
-    <Compile Include="TimeMachineClasses\RC\RemoteTimeMachine.cs" />
-    <Compile Include="TimeMachineClasses\RC\RemoteTimeMachineHandler.cs" />
-    <Compile Include="TimeMachineClasses\Story\StoryTimeMachine.cs" />
-    <Compile Include="TimeMachineClasses\Clone\TimeMachineClone.cs" />
-    <Compile Include="TimeMachineClasses\TimeMachineHandler.cs" />
-    <Compile Include="TimeMachineClasses\TimeMachine.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\PropsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\SoundsHandler.cs" />
-    <Compile Include="TimeMachineClasses\Handlers\BaseHandlers\ModsHandler.cs" />
-    <Compile Include="Utility\ModelHandler.cs" />
-    <Compile Include="Players\MrFusionRefillPlayer.cs" />
-    <Compile Include="Players\Player.cs" />
-    <Compile Include="Players\PlutoniumRefillPlayer.cs" />
-    <Compile Include="Players\WheelAnimationPlayer.cs" />
-    <Compile Include="Players\WormholeAnimationPlayer.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings\ModSettings.cs" />
-    <Compile Include="Settings\TCDEditer.cs" />
-    <Compile Include="Utility\TextHandler.cs" />
-    <Compile Include="Utility\TrashHandler.cs" />
-    <Compile Include="Utility\Wayback\WaybackRecord.cs" />
-    <Compile Include="Utility\Wayback\WaybackMachine.cs" />
-    <Compile Include="Utility\Wayback\WaybackSystem.cs" />
-    <Compile Include="Utility\Wayback\Entities\WaybackVehicle.cs" />
-    <Compile Include="Utility\Wayback\Entities\WaybackPed.cs" />
-    <Compile Include="Utility\WeatherHandler.cs" />
-    <Compile Include="Vehicles\DMC12\ModsPrimitive.cs" />
-    <Compile Include="Vehicles\DMC12\DMC12.cs" />
-    <Compile Include="Vehicles\DMC12\DMC12Handler.cs" />
-    <Compile Include="Vehicles\DMC12\DMC12Mods.cs" />
-    <Compile Include="Vehicles\Train\CustomTrain.cs" />
-    <Compile Include="Vehicles\Train\CustomTrainHandler.cs" />
-    <Compile Include="Utility\InternalExtensions.cs" />
+    <Reference Include="KlangRageAudioLibrary">
+      <HintPath>F:\EpicLibrary\GTAV\Scripts\KlangRageAudioLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="LemonUI.SHVDN3">
+      <HintPath>F:\EpicLibrary\GTAV\Scripts\LemonUI.SHVDN3.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptHookVDotNet3">
+      <HintPath>F:\EpicLibrary\GTAV\ScriptHookVDotNet3.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FusionLibrary.SHVDN3">
-      <Version>1.5.1</Version>
-    </PackageReference>
-    <PackageReference Include="LemonUI.SHVDN3">
-      <Version>1.8.0</Version>
-    </PackageReference>
-    <PackageReference Include="ScriptHookVDotNet3">
-      <Version>3.5.1</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Remove="Menu\TrainMissionMenu.cs" />
+    <Compile Remove="Utility\RandomExtensions.cs" />
+    <Compile Remove="Utility\Utils.cs" />
+  </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>IF NOT "%25GTAPath%25" == "" (
     IF NOT EXIST "%25GTAPath%25" (

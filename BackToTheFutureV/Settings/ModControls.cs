@@ -1,4 +1,5 @@
 ﻿using GTA;
+using System.IO;
 using System.Windows.Forms;
 using Control = GTA.Control;
 
@@ -22,6 +23,10 @@ namespace BackToTheFutureV
         public static Keys TCToggle { get; set; } = Keys.Add;
         public static Keys CutsceneToggle { get; set; } = Keys.Multiply;
         public static Keys InputToggle { get; set; } = Keys.Divide;
+        /*
+         * File.Delete("./scripts/BackToTheFutureV/settings.ini");
+            File.Copy("./scripts/BackToTheFutureV/default.ini", "./scripts/BackToTheFutureV/settings.ini");
+        */
 
         public static void Reset()
         {
