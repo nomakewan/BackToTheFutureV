@@ -61,25 +61,23 @@ namespace BackToTheFutureV
 
         public override void Menu_OnItemCheckboxChanged(NativeCheckboxItem sender, EventArgs e, bool Checked)
         {
-            if (sender == TimeCircuitsOn)
+            switch (sender)
             {
-                CurrentTimeMachine.Events.SetTimeCircuits?.Invoke(Checked);
-            }
-            else if (sender == CutsceneMode)
-            {
-                CurrentTimeMachine.Events.SetCutsceneMode?.Invoke(Checked);
-            }
-            else if (sender == RemoteControl && !Checked && CurrentTimeMachine.Properties.IsRemoteControlled)
-            {
-                RemoteTimeMachineHandler.StopRemoteControl();
-            }
-            else if (sender == FlyMode)
-            {
-                CurrentTimeMachine.Events.SetFlyMode?.Invoke(Checked);
-            }
-            else if (sender == AltitudeHold)
-            {
-                CurrentTimeMachine.Events.SetAltitudeHold?.Invoke(Checked);
+                case NativeCheckboxItem item when item == TimeCircuitsOn:
+                    CurrentTimeMachine.Events.SetTimeCircuits?.Invoke(Checked);
+                    break;
+                case NativeCheckboxItem item when item == CutsceneMode:
+                    CurrentTimeMachine.Events.SetCutsceneMode?.Invoke(Checked);
+                    break;
+                case NativeCheckboxItem item when item == FlyMode:
+                    CurrentTimeMachine.Events.SetFlyMode?.Invoke(Checked);
+                    break;
+                case NativeCheckboxItem item when item == AltitudeHold:
+                    CurrentTimeMachine.Events.SetAltitudeHold?.Invoke(Checked);
+                    break;
+                case NativeCheckboxItem item when item == RemoteControl && !Checked && CurrentTimeMachine.Properties.IsRemoteControlled:
+                    RemoteTimeMachineHandler.StopRemoteControl();
+                    break;
             }
             //else if (sender == EscapeMission)
             //{
