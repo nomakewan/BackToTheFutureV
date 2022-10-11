@@ -40,7 +40,7 @@ namespace BackToTheFutureV
                 {
                     WaybackSystem.CurrentPlayerRecording.LastRecord.Vehicle.Event |= WaybackVehicleEvent.LightningStrike;
                 }
-
+                
                 Strike();
             }
 
@@ -133,9 +133,12 @@ namespace BackToTheFutureV
             {
                 Function.Call(Hash.FORCE_LIGHTNING_FLASH);
 
-                if (Properties.IsFlying)
+                if (PropertiesHandler.UnbreakableCar == true)
                 {
-                    Properties.AreFlyingCircuitsBroken = true;
+                    if (Properties.IsFlying)
+                    {
+                        Properties.AreFlyingCircuitsBroken = true;
+                    }
                 }
             }
 

@@ -16,6 +16,7 @@ namespace BackToTheFutureV
         private readonly NativeCheckboxItem SIDMax;
         private readonly NativeItem LightningStrike;
         private readonly NativeSliderItem StrikeDelay;
+        private readonly NativeCheckboxItem DontBreakCar;
         private readonly NativeCheckboxItem HideHUD;
 
 
@@ -30,6 +31,7 @@ namespace BackToTheFutureV
             EngineStall = NewCheckboxItem("Engine");
             LightningStrike = NewItem("LightningStrike");
             StrikeDelay = NewSliderItem("StrikeDelay", 60, 3);
+            DontBreakCar = NewCheckboxItem("DontBreakCar");
             HideHUD = NewCheckboxItem("HideHUD");
         }
 
@@ -86,6 +88,9 @@ namespace BackToTheFutureV
                     break;
                 case NativeCheckboxItem _ when sender == HideHUD:
                     FusionUtils.HideGUI = Checked;
+                    break;
+                case NativeCheckboxItem _ when sender == DontBreakCar:
+                    PropertiesHandler.UnbreakableCar = Checked;
                     break;
             }
         }

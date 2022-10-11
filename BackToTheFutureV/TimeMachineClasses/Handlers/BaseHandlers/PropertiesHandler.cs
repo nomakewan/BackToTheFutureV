@@ -42,6 +42,7 @@ namespace BackToTheFutureV
         public int OverrideTTSfxSpeed { get; set; }
         public int OverrideTTSpeed { get; set; }
         public int OverrideWormholeLengthTime { get; set; }
+        public static bool UnbreakableCar { get; set; }
 
 
         //Temporary properties

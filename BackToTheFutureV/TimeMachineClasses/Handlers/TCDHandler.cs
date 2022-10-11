@@ -41,7 +41,7 @@ namespace BackToTheFutureV
         };
 
         private int nextCheckGlitch;
-
+        
         private readonly TimedEventHandler glitchEvents = new TimedEventHandler();
         private bool softGlitch;
 

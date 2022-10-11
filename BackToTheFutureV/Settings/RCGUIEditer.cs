@@ -102,7 +102,7 @@ namespace BackToTheFutureV
             ScaleformsHandler.RCGUI.Preview();
 
             Game.DisableAllControlsThisFrame();
-
+            
             // This is a long mess but i dont think there any other way to write it
             if (Game.IsControlPressed(Control.PhoneUp) && Game.IsControlPressed(Control.PhoneRight)) // Up Right
             {

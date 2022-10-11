@@ -175,11 +175,14 @@ namespace BackToTheFutureV
 
                 if (Properties.IsFlying)
                 {
-                    Properties.AreFlyingCircuitsBroken = true;
-
-                    if (!Mods.IsDMC12 || Mods.Hoodbox == ModState.Off)
+                    if (PropertiesHandler.UnbreakableCar == false)
                     {
-                        Events.SetTimeCircuitsBroken?.Invoke();
+                        Properties.AreFlyingCircuitsBroken = true;
+
+                        if (!Mods.IsDMC12 || Mods.Hoodbox == ModState.Off)
+                        {
+                            Events.SetTimeCircuitsBroken?.Invoke();
+                        }
                     }
                 }
                 else
